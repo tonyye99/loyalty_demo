@@ -51,5 +51,5 @@ Execute `npm run watch` to start the dev server and run the application.
 9. Add items to cart in `/cart/{id}/items` route.
 10. Checkout the cart in `/cart/checkout` route. The stripe checkout session will be created and return as response.
 11. Stripe local webhook server is needed to run before completing checkout session. So in another terminal run `stripe listen --forward-to localhost:8080/order/webhook/success`. Make sure you have stipe cli installed.
-12. Go to that checkout session url in browser to complete the payment. Just use test card number 4242 4242 4242 4242. Order will be created in database with calculated points.
+12. Go to that checkout session url in browser to complete the payment. Just use test card number 4242 4242 4242 4242. Order will be created in database with calculated points and customer will be rewarded if they are eligible (set `eligible_to_redeem_points` to true).
 13. The other endpoints such as points transfer, product CRUD can be explored in the shared postman collection.
