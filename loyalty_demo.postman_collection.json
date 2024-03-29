@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "4e2941c1-3073-432a-bd36-5660ccda7cb9",
+		"name": "loyalty_demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6604084",
+		"_collection_link": "https://red-robot-540575.postman.co/workspace/reserver~8dfcc4fa-572b-4d65-8c79-0123808aaa99/collection/6604084-4e2941c1-3073-432a-bd36-5660ccda7cb9?action=share&source=collection_link&creator=6604084"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"Apple Vision Pro\",\n    \"price\": 100,\n    \"point_cost\": 10,\n    \"stock_quantity\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"Sony Beat by Dr.Dre\",\n    \"price\": 100,\n    \"point_cost\": 10,\n    \"stock_quantity\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"all"
+							],
+							"query": [
+								{
+									"key": "x-api-key",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"1"
+							],
+							"query": [
+								{
+									"key": "x-api-key",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/1/items",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"1",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redeem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isRedeem\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/1/redeem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"1",
+								"redeem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cartId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cart/checkout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Total",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cart/1/total",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cart",
+								"1",
+								"total"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customer/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_first_name\": \"Fizz\",\n    \"customer_last_name\": \"Buzz\",\n    \"email\": \"fizzbuzz@gmail.com\",\n    \"points_balance\": 0,\n    \"eligible_to_redeem_points\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_first_name\": \"fizzy\",\n    \"customer_last_name\": \"buzzy\",\n    \"points_balance\": 10,\n    \"eligible_to_redeem_points\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customer/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/customer/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Points",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transfer_amount\": 10,\n    \"to_customer_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customer/1/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"1",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"points\",\n    \"value\": \"0.1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/setting/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"setting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/setting/points/detail",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"setting",
+								"points",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/setting/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"setting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"value\": \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/setting/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"setting",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/setting/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"setting",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/order/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"order",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/order/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
